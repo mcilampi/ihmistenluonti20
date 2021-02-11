@@ -308,10 +308,8 @@ public class ohjelma {
 
 	// arvotaan mies vaiko nainen ja arvotulta listalta etunimi
 	private static String arvoEtunimi(ArrayList<String> nimiLista) {
-		int kumpi = 0;
 		String etuNimi = "";
 		Random satunnainen = new Random();
-		kumpi = satunnainen.nextInt(2);
 		etuNimi = nimiLista.get(satunnainen.nextInt(nimiLista.size()));
 		return etuNimi;
 	}
@@ -399,23 +397,6 @@ public class ohjelma {
 			ioe.printStackTrace();
 		}
 		return postiLista;
-	}
-	
-	// luetaan jakoj��nn�s listaan
-	private static ArrayList<String> lueJaannos() {
-		String line = "";
-		ArrayList<String> jaannosLista = new ArrayList<String>();
-		try {
-			FileReader lukija = new FileReader("./data/tarkiste_eka.txt", StandardCharsets.UTF_8);
-			BufferedReader puskuri = new BufferedReader(lukija);
-			while ((line = puskuri.readLine()) != null) {
-				jaannosLista.add(line);
-			}
-			puskuri.close();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
-		return jaannosLista;
 	}
 	
 	//luetaan tarkistemerkit listaan
