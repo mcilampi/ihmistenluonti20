@@ -1,1 +1,1 @@
-# ihmistenluonti20
+# Satunnaishenkilöiden luontiohjelma v2.0
