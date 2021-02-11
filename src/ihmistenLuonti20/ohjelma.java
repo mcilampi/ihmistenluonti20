@@ -44,8 +44,18 @@ public class ohjelma {
 			int montako = 0;
 			ArrayList<String> ihmisLista = new ArrayList<String>();
 			ArrayList<String> ihmisListaCSV = new ArrayList<String>();
-			System.out.println("Montako nimeä haluat luoda? ");
-			montako = Integer.parseInt(syote.nextLine());
+			boolean montakoOk = false;
+			while (montakoOk == false) {
+				try {
+					System.out.println("Montako nimeÃ¤ haluat luoda? ");
+					montako = Integer.parseInt(syote.nextLine());
+					montakoOk = true;
+					break;
+				} catch (Exception e) {
+					System.out.println("Anna kokonaisluku!");
+				}
+			}
+
 			luoNimia(montako);
 			Instant start = Instant.now();
 			String henkiloTiedot = "";
@@ -87,16 +97,39 @@ public class ohjelma {
 			Instant end = Instant.now();
 			Duration kesto = Duration.between(start, end);
 			System.out.println("Aikaa kului " + kesto.toMillis() + " millisekuntia eli " + kesto.toString());
-			System.out.println("Haluatko tallentaa tiedoston? k/e : ");
-			String valinta = syote.nextLine();
+			boolean valintaOk = false;
+			String valinta = "";
+			while (valintaOk == false) {
+
+				System.out.println("Haluatko tallentaa tiedoston? k/e : ");
+				valinta = syote.nextLine();
+				if ((!valinta.equalsIgnoreCase("k")) && (!valinta.equalsIgnoreCase("e"))) {
+					System.out.println("Valitse k tai e!");
+				} else {
+					valintaOk = true;
+					break;
+				}
+				
+			}
+				
 			if (valinta.equalsIgnoreCase("k")) {
 				System.out.println("Anna tiedostolle nimi: ");
 				String tiedostoNimi = syote.nextLine();
-				System.out.println("Haluatko tallentaa tiedoston");
-				System.out.println("1. tekstitiedostona (.txt)");
-				System.out.println("2. CSV-tiedostona (.csv)?");
-				System.out.println("Valintasi 1/2 :");
-				int muotoValinta = Integer.parseInt(syote.nextLine());
+				boolean muotoOk = false;
+				int muotoValinta = 0;
+				while (muotoOk == false) {
+					System.out.println("Haluatko tallentaa tiedoston");
+					System.out.println("1. tekstitiedostona (.txt)");
+					System.out.println("2. CSV-tiedostona (.csv)?");
+					System.out.println("Valintasi 1/2 :");
+					muotoValinta = Integer.parseInt(syote.nextLine());
+					if ((muotoValinta != 1) && (muotoValinta != 2)) {
+						System.out.println("Valitse 1 tai 2!");
+					} else {
+						muotoOk = true;
+						break;
+					}
+				}
 				if (muotoValinta == 1) {
 					try {
 						FileWriter kirjoittaja = new FileWriter(tiedostoNimi + ".txt");
@@ -126,8 +159,19 @@ public class ohjelma {
 			if (valinta.equalsIgnoreCase("e")) {
 				;
 			}
-			System.out.println("Haluatko luoda lisää nimiä? k/e : ");
-			String vielako = syote.nextLine();
+			String vielako = "";
+			boolean vielakoOk = false;
+			while (vielakoOk == false) {
+				System.out.println("Haluatko luoda lisÃ¤Ã¤ nimiÃ¤? k/e : ");
+				vielako = syote.nextLine();
+				if ((!vielako.equalsIgnoreCase("k")) && (!vielako.equalsIgnoreCase("e"))) {
+					System.out.println("Valitse k tai e!");
+				} else {
+					vielakoOk = true;
+					break;
+				}
+			}
+
 			if (vielako.equalsIgnoreCase("k")) {
 				;
 			}
@@ -144,7 +188,7 @@ public class ohjelma {
 		return jakoJaannos;
 	}
 
-	// muodostetaan päivästä, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
+	// muodostetaan pï¿½ivï¿½stï¿½, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
 	private static int muodostaAlkuOsa(int paiva, int kuukausi, int vuosi) {
 		String paivaString = String.format("%02d", paiva);
 		String kuukausiString = String.format("%02d", kuukausi);
@@ -171,21 +215,21 @@ public class ohjelma {
 		return syntyAika;
 	}
 
-	// arvotaan syntymäajan vuosi
+	// arvotaan syntymï¿½ajan vuosi
 	private static int arvoVuosi() {
 		Random satunnainen = new Random();
 		int vuosi = satunnainen.nextInt(90) + 1930;
 		return vuosi;
 	}
 	
-	// arvotaan syntymäajan kuukausi
+	// arvotaan syntymï¿½ajan kuukausi
 	private static int arvoKuukausi() {
 		Random satunnainen = new Random();
 		int kuukausi = satunnainen.nextInt(12) + 1;
 		return kuukausi;
 	}
 	
-	// arvotaan syntymäajan päivä
+	// arvotaan syntymï¿½ajan pï¿½ivï¿½
 	private static int arvoPaiva() {
 		Random satunnainen = new Random();
 		int paiva = satunnainen.nextInt(28) + 1;
@@ -364,7 +408,7 @@ public class ohjelma {
 		return postiLista;
 	}
 	
-	// luetaan jakojäännös listaan
+	// luetaan jakojï¿½ï¿½nnï¿½s listaan
 	private static ArrayList<String> lueJaannos() {
 		String line = "";
 		ArrayList<String> jaannosLista = new ArrayList<String>();
