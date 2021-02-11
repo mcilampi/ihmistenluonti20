@@ -4,13 +4,13 @@ Työkalu satunnaishenkilöiden tekemiseen, tehty omaan tarpeeseen ohjelmtointiha
 
 Ominaisuuksia:
 
--ohjelma arpoo etunimen ja sukunimen omista listoistaan
--luo syntymäajan vuosien 1920-2020 välille
--syntymäajan perusteella luodaan henkilötunnus, jonka
+- ohjelma arpoo etunimen ja sukunimen omista listoistaan
+- luo syntymäajan vuosien 1920-2020 välille
+- syntymäajan perusteella luodaan henkilötunnus, jonka
 alkuosa muodostetaan edellä arvotusta syntymäajasta
--välimerkki muodostetaan oikeaoppisesti syntymävuoden mukaan
--loppuosan kolme ensimmäistä numeroa arvotaan, miehillä viimeinen niistä muutetaan parittomaksi ja naisilla parilliseksi 
--viimeinen merkki eli tarkiste lasketaan oikean kaavan mukaan alku- ja loppuosan yhdistelmästä
+- välimerkki muodostetaan oikeaoppisesti syntymävuoden mukaan
+- loppuosan kolme ensimmäistä numeroa arvotaan, miehillä viimeinen niistä muutetaan parittomaksi ja naisilla parilliseksi 
+- viimeinen merkki eli tarkiste lasketaan oikean kaavan mukaan alku- ja loppuosan yhdistelmästä
 - arvotaan lähiosoitteen kadunnimi tiedostosta, muutettavalla todennäköisyydellä lisätään kadunnumero ja jos se löytyy, muutettavalla todennäköisyydellä asunnon numero
 - arvotaan postinumero ja toimipaikka-yhdistelmä tiedostosta
 - arvotaan suuntanumero ja puhelinnumero
