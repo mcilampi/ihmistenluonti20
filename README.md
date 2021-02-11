@@ -5,9 +5,9 @@ Työkalu satunnaishenkilöiden tekemiseen, tehty omaan tarpeeseen ohjelmtointiha
 Ominaisuuksia:
 
 - ohjelma arpoo etunimen ja sukunimen omista listoistaan
-- luo syntymäajan vuosien 1920-2020 välille
-- syntymäajan perusteella luodaan henkilötunnus, jonka
-alkuosa muodostetaan edellä arvotusta syntymäajasta
+- luo syntymäajan vuosien 1930-2020 välille
+- syntymäajan perusteella luodaan henkilötunnus: 
+-- alkuosa muodostetaan edellä arvotusta syntymäajasta
 - välimerkki muodostetaan oikeaoppisesti syntymävuoden mukaan
 - loppuosan kolme ensimmäistä numeroa arvotaan, miehillä viimeinen niistä muutetaan parittomaksi ja naisilla parilliseksi 
 - viimeinen merkki eli tarkiste lasketaan oikean kaavan mukaan alku- ja loppuosan yhdistelmästä
