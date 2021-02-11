@@ -56,7 +56,7 @@ public class ohjelma {
 				}
 			}
 
-			luoNimia(montako);
+			
 			Instant start = Instant.now();
 			String henkiloTiedot = "";
 			String henkiloTiedotCSV = "";
@@ -188,7 +188,7 @@ public class ohjelma {
 		return jakoJaannos;
 	}
 
-	// muodostetaan p�iv�st�, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
+	// muodostetaan päivästä, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
 	private static int muodostaAlkuOsa(int paiva, int kuukausi, int vuosi) {
 		String paivaString = String.format("%02d", paiva);
 		String kuukausiString = String.format("%02d", kuukausi);
@@ -215,21 +215,21 @@ public class ohjelma {
 		return syntyAika;
 	}
 
-	// arvotaan syntym�ajan vuosi
+	// arvotaan syntymäajan vuosi
 	private static int arvoVuosi() {
 		Random satunnainen = new Random();
 		int vuosi = satunnainen.nextInt(90) + 1930;
 		return vuosi;
 	}
 	
-	// arvotaan syntym�ajan kuukausi
+	// arvotaan syntymäajan kuukausi
 	private static int arvoKuukausi() {
 		Random satunnainen = new Random();
 		int kuukausi = satunnainen.nextInt(12) + 1;
 		return kuukausi;
 	}
 	
-	// arvotaan syntym�ajan p�iv�
+	// arvotaan syntymäajan päivä
 	private static int arvoPaiva() {
 		Random satunnainen = new Random();
 		int paiva = satunnainen.nextInt(28) + 1;
@@ -316,13 +316,6 @@ public class ohjelma {
 		return etuNimi;
 	}
 
-
-
-	private static void luoNimia(int montako) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	// luetaan miesten etunimet listaan
 	private static ArrayList<String> lueMiestenNimet() {
 		String line = "";
