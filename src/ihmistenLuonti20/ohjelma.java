@@ -47,7 +47,7 @@ public class ohjelma {
 			boolean montakoOk = false;
 			while (montakoOk == false) {
 				try {
-					System.out.println("Montako nimeÃ¤ haluat luoda? ");
+					System.out.println("Montako nimeä haluat luoda? ");
 					montako = Integer.parseInt(syote.nextLine());
 					montakoOk = true;
 					break;
@@ -162,7 +162,7 @@ public class ohjelma {
 			String vielako = "";
 			boolean vielakoOk = false;
 			while (vielakoOk == false) {
-				System.out.println("Haluatko luoda lisÃ¤Ã¤ nimiÃ¤? k/e : ");
+				System.out.println("Haluatko luoda lisää nimiä? k/e : ");
 				vielako = syote.nextLine();
 				if ((!vielako.equalsIgnoreCase("k")) && (!vielako.equalsIgnoreCase("e"))) {
 					System.out.println("Valitse k tai e!");
