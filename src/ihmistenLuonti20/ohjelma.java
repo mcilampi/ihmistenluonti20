@@ -47,7 +47,7 @@ public class ohjelma {
 			boolean montakoOk = false;
 			while (montakoOk == false) {
 				try {
-					System.out.println("Montako nimeä haluat luoda? ");
+					System.out.println("Montako nimeÃ¤ haluat luoda? ");
 					montako = Integer.parseInt(syote.nextLine());
 					montakoOk = true;
 					break;
@@ -90,7 +90,7 @@ public class ohjelma {
 				hetu = String.format("%06d",alkuOsa) + valiMerkki + loppuOsaString + tarkiste;
 				henkiloTiedot = etuNimi + " " + sukuNimi + " " + hetu + " " + syntyAika + " " + tienNimi + " " + tienNumero + " " + postiNro + " " + puhNro;
 				henkiloTiedotCSV = etuNimi + "," + sukuNimi + "," + hetu + "," + syntyAika + "," + tienNimi + " " + tienNumero + "," + postiNro + "," + puhNro;
-				System.out.println(String.format("%08d",(i + 1 )) + ". " + henkiloTiedot);
+				//System.out.println(String.format("%08d",(i + 1 )) + ". " + henkiloTiedot);
 				ihmisLista.add(henkiloTiedot);
 				ihmisListaCSV.add(henkiloTiedotCSV);
 			}
@@ -162,7 +162,7 @@ public class ohjelma {
 			String vielako = "";
 			boolean vielakoOk = false;
 			while (vielakoOk == false) {
-				System.out.println("Haluatko luoda lisää nimiä? k/e : ");
+				System.out.println("Haluatko luoda lisÃ¤Ã¤ nimiÃ¤? k/e : ");
 				vielako = syote.nextLine();
 				if ((!vielako.equalsIgnoreCase("k")) && (!vielako.equalsIgnoreCase("e"))) {
 					System.out.println("Valitse k tai e!");
@@ -188,7 +188,7 @@ public class ohjelma {
 		return jakoJaannos;
 	}
 
-	// muodostetaan päivästä, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
+	// muodostetaan pÃ¤ivÃ¤stÃ¤, kuukaudesta ja vuodesta hetun alkuosa ja palautetaan numerona
 	private static int muodostaAlkuOsa(int paiva, int kuukausi, int vuosi) {
 		String paivaString = String.format("%02d", paiva);
 		String kuukausiString = String.format("%02d", kuukausi);
@@ -215,21 +215,21 @@ public class ohjelma {
 		return syntyAika;
 	}
 
-	// arvotaan syntymäajan vuosi
+	// arvotaan syntymÃ¤ajan vuosi
 	private static int arvoVuosi() {
 		Random satunnainen = new Random();
 		int vuosi = satunnainen.nextInt(90) + 1930;
 		return vuosi;
 	}
 	
-	// arvotaan syntymäajan kuukausi
+	// arvotaan syntymÃ¤ajan kuukausi
 	private static int arvoKuukausi() {
 		Random satunnainen = new Random();
 		int kuukausi = satunnainen.nextInt(12) + 1;
 		return kuukausi;
 	}
 	
-	// arvotaan syntymäajan päivä
+	// arvotaan syntymÃ¤ajan pÃ¤ivÃ¤
 	private static int arvoPaiva() {
 		Random satunnainen = new Random();
 		int paiva = satunnainen.nextInt(28) + 1;

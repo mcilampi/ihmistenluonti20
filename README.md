@@ -17,3 +17,13 @@ Ominaisuuksia:
 - tiedoston voi tallentaa .txt- tai .csv-muodossa
 
 Kokonaan uudelleenkirjoitettu ensimmäisestä versiosta, nyt paljon nopeampi, koska vähemmän levyltä lukua ja kirjoitusta.
+
+Ohje, miten CSV:stä saa näppärästi tuotua henkilötiedot MySQL- tai MariDB-tietokantaan: 
+
+1. Luodaan taulu, johon tiedot tuodaan (korvaa "asiakkaat" haluamallasi taulun nimellä):
+create table asiakkaat (Etunimi VARCHAR(30) NOT NULL, Sukunimi VARCHAR(30) NOT NULL, Syntymaaika VARCHAR(15) NOT NULL, Henkilotunnus VARCHAR(15) NOT NULL, Katuosoite VARCHAR(30) NOT NULL, Postinumero_ja_toimipaikka VARCHAR(30) NOT NULL, Puhelinnumero VARCHAR(30) NOT NULL);
+
+2. Varmista, että tietokannan asetukset sallivat tietojen tuonnin paikallisesta tiedostosta (katso oman tietokantaohjelmistosi ohjeesta).
+
+3. Tuodaan tiedot tietokannasta (korvaa polku omallasi):
+LOAD DATA LOCAL infile 'C:/polku/tiedostoon/tiedosto.csv' INTO TABLE asiakkaat CHARACTER SET latin1 FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
